@@ -7,7 +7,11 @@ import helmet from "helmet";
 import morgan from "morgan";
 
 import { connectDatabase } from "./config/database.js";
+
 import authRoutes from "./routes/auth.routes.js";
+import doctorRoutes from "./routes/doctor.routes.js";
+import patientRoutes from "./routes/patient.routes.js";
+import dashboardRoutes from "./routes/dashboard.routes.js";
 
 const app = express();
 
@@ -25,6 +29,9 @@ app.use(cookieParser());
 app.use(morgan("dev"));
 
 app.use("/api/auth", authRoutes);
+app.use("/api/doctors", doctorRoutes);
+app.use("/api/patients", patientRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 app.get("/", (_req, res) => {
   res.json({

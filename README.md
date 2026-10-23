@@ -14,12 +14,12 @@ Doctor Tracker is an internal admin tool for clinics and hospital groups that ne
 
 ## Live Demo & Credentials
 
-- **Live URL:** [ADD LINK]
+- **Live URL:** https://doctor-tracker-zeta.vercel.app/
 - **Repository:** [ADD LINK]
 
-| Email                     | Password    |
-| ------------------------- | ----------- |
-| `admin@doctortracker.com` | `Admin@123` |
+| Email               | Password |
+| ------------------- | -------- |
+| `admin@example.com` | `123456` |
 
 ## Features
 
@@ -70,19 +70,19 @@ Doctor Tracker is an internal admin tool for clinics and hospital groups that ne
 
 ## Tech Stack
 
-| Layer            | Technology                                  | Why                                                                         |
-| ---------------- | ------------------------------------------- | --------------------------------------------------------------------------- |
-| Framework        | Next.js 16 (App Router)                     | File-based routing, route groups for auth vs. protected layouts.            |
-| Language         | TypeScript (frontend and backend)           | Shared, checked types for API payloads and models.                          |
-| Styling          | Tailwind CSS 4                              | Fast, consistent responsive styling without a component library.            |
-| Server state     | TanStack Query 5 (dashboard)                | Caching, deduped requests, and smooth range switching for charts.           |
-| Charts           | Recharts 3                                  | Composable React charts with responsive containers.                         |
-| Dates / icons    | date-fns, lucide-react                      | Small, tree-shakeable utilities.                                            |
-| API              | Node.js + Express 5                         | Minimal, well-known REST framework with simple middleware.                  |
-| Database         | MongoDB + Mongoose 9                        | Flexible documents, schema validation, and aggregation for analytics.       |
-| Auth             | jsonwebtoken, bcryptjs, cookie-parser       | Stateless JWT sessions in an httpOnly cookie; hashed passwords.             |
-| API hardening    | helmet, cors (credentials), morgan          | Security headers, a single allowed origin, request logging.                 |
-| Tooling          | ESLint, tsx, Playwright                     | Linting, TS dev server with watch mode, automated README screenshots.       |
+| Layer         | Technology                            | Why                                                                   |
+| ------------- | ------------------------------------- | --------------------------------------------------------------------- |
+| Framework     | Next.js 16 (App Router)               | File-based routing, route groups for auth vs. protected layouts.      |
+| Language      | TypeScript (frontend and backend)     | Shared, checked types for API payloads and models.                    |
+| Styling       | Tailwind CSS 4                        | Fast, consistent responsive styling without a component library.      |
+| Server state  | TanStack Query 5 (dashboard)          | Caching, deduped requests, and smooth range switching for charts.     |
+| Charts        | Recharts 3                            | Composable React charts with responsive containers.                   |
+| Dates / icons | date-fns, lucide-react                | Small, tree-shakeable utilities.                                      |
+| API           | Node.js + Express 5                   | Minimal, well-known REST framework with simple middleware.            |
+| Database      | MongoDB + Mongoose 9                  | Flexible documents, schema validation, and aggregation for analytics. |
+| Auth          | jsonwebtoken, bcryptjs, cookie-parser | Stateless JWT sessions in an httpOnly cookie; hashed passwords.       |
+| API hardening | helmet, cors (credentials), morgan    | Security headers, a single allowed origin, request logging.           |
+| Tooling       | ESLint, tsx, Playwright               | Linting, TS dev server with watch mode, automated README screenshots. |
 
 ## Setup Guide
 
@@ -152,21 +152,21 @@ There is no data seeder for doctors and patients yet, so add a few through the U
 
 **Backend** (`backend/`)
 
-| Script               | Description                                              |
-| -------------------- | -------------------------------------------------------- |
-| `npm run dev`        | Start the API with `tsx watch` (reloads on change).      |
-| `npm run build`      | Compile TypeScript to `dist/`.                           |
-| `npm start`          | Run the compiled API from `dist/server.js`.              |
-| `npm run seed:admin` | Create an admin account from the `ADMIN_*` variables.    |
+| Script               | Description                                           |
+| -------------------- | ----------------------------------------------------- |
+| `npm run dev`        | Start the API with `tsx watch` (reloads on change).   |
+| `npm run build`      | Compile TypeScript to `dist/`.                        |
+| `npm start`          | Run the compiled API from `dist/server.js`.           |
+| `npm run seed:admin` | Create an admin account from the `ADMIN_*` variables. |
 
 **Frontend** (`frontend/`)
 
-| Script                | Description                                                                 |
-| --------------------- | --------------------------------------------------------------------------- |
-| `npm run dev`         | Start the Next.js dev server on port 3000.                                  |
-| `npm run build`       | Production build.                                                           |
-| `npm start`           | Serve the production build.                                                 |
-| `npm run lint`        | Run ESLint.                                                                 |
+| Script                | Description                                                                    |
+| --------------------- | ------------------------------------------------------------------------------ |
+| `npm run dev`         | Start the Next.js dev server on port 3000.                                     |
+| `npm run build`       | Production build.                                                              |
+| `npm start`           | Serve the production build.                                                    |
+| `npm run lint`        | Run ESLint.                                                                    |
 | `npm run screenshots` | Capture README screenshots with Playwright (frontend and API must be running). |
 
 To regenerate screenshots the first time, install the browser once:
@@ -339,44 +339,44 @@ All endpoints are prefixed with `/api`. Everything except login, logout, and hea
 
 ### Called by the frontend
 
-| Method   | Path                                      | Description                                                                 |
-| -------- | ----------------------------------------- | --------------------------------------------------------------------------- |
-| `POST`   | `/auth/login`                             | Log in; sets the `doctor_tracker_token` cookie.                             |
-| `GET`    | `/auth/me`                                | Current admin from the cookie.                                              |
-| `POST`   | `/auth/logout`                            | Clear the auth cookie.                                                      |
-| `GET`    | `/doctors`                                | List doctors. Query: `page`, `limit`, `search`, `specialization`, `hospital`, `from`, `to`. |
-| `POST`   | `/doctors`                                | Create a doctor.                                                            |
-| `GET`    | `/doctors/:id`                            | Get one doctor.                                                             |
-| `PATCH`  | `/doctors/:id`                            | Update a doctor.                                                            |
-| `DELETE` | `/doctors/:id`                            | Delete a doctor.                                                            |
+| Method   | Path                                      | Description                                                                                                        |
+| -------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `POST`   | `/auth/login`                             | Log in; sets the `doctor_tracker_token` cookie.                                                                    |
+| `GET`    | `/auth/me`                                | Current admin from the cookie.                                                                                     |
+| `POST`   | `/auth/logout`                            | Clear the auth cookie.                                                                                             |
+| `GET`    | `/doctors`                                | List doctors. Query: `page`, `limit`, `search`, `specialization`, `hospital`, `from`, `to`.                        |
+| `POST`   | `/doctors`                                | Create a doctor.                                                                                                   |
+| `GET`    | `/doctors/:id`                            | Get one doctor.                                                                                                    |
+| `PATCH`  | `/doctors/:id`                            | Update a doctor.                                                                                                   |
+| `DELETE` | `/doctors/:id`                            | Delete a doctor.                                                                                                   |
 | `GET`    | `/patients`                               | List patients (doctor populated). Query: `page`, `limit`, `search`, `condition`, `gender`, `doctor`, `from`, `to`. |
-| `POST`   | `/patients`                               | Create a patient.                                                           |
-| `PATCH`  | `/patients/:id`                           | Update a patient.                                                           |
-| `DELETE` | `/patients/:id`                           | Delete a patient.                                                           |
-| `GET`    | `/dashboard/stats`                        | Totals, new this month, monthly % change, last-30-day count.               |
-| `GET`    | `/dashboard/patients-over-time?range=`    | Time series; `range` is `7d`, `30d`, or `12m`.                              |
-| `GET`    | `/dashboard/patients-per-doctor?limit=10` | Top doctors by patient count.                                               |
-| `GET`    | `/dashboard/by-specialization`            | Doctor count per specialization.                                            |
+| `POST`   | `/patients`                               | Create a patient.                                                                                                  |
+| `PATCH`  | `/patients/:id`                           | Update a patient.                                                                                                  |
+| `DELETE` | `/patients/:id`                           | Delete a patient.                                                                                                  |
+| `GET`    | `/dashboard/stats`                        | Totals, new this month, monthly % change, last-30-day count.                                                       |
+| `GET`    | `/dashboard/patients-over-time?range=`    | Time series; `range` is `7d`, `30d`, or `12m`.                                                                     |
+| `GET`    | `/dashboard/patients-per-doctor?limit=10` | Top doctors by patient count.                                                                                      |
+| `GET`    | `/dashboard/by-specialization`            | Doctor count per specialization.                                                                                   |
 
 ### Available but not used by the frontend yet
 
-| Method | Path                       | Description                                                     |
-| ------ | -------------------------- | --------------------------------------------------------------- |
-| `GET`  | `/health`                  | Health check.                                                   |
-| `GET`  | `/patients/:id`            | Get one patient.                                                |
-| `GET`  | `/dashboard?from=&to=`     | Combined summary, patients by doctor, and patients by date for a date range. |
+| Method | Path                   | Description                                                                  |
+| ------ | ---------------------- | ---------------------------------------------------------------------------- |
+| `GET`  | `/health`              | Health check.                                                                |
+| `GET`  | `/patients/:id`        | Get one patient.                                                             |
+| `GET`  | `/dashboard?from=&to=` | Combined summary, patients by doctor, and patients by date for a date range. |
 
 ## Visual Evidence
 
 Generated with `npm run screenshots` (Playwright, 1440×900 desktop and 390×844 mobile).
 
-| Page          | Desktop                                                          | Mobile                                                                          |
-| ------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| Login         | ![Login, desktop](docs/screenshots/login-desktop.png)            | <img src="docs/screenshots/login-mobile.png" alt="Login, mobile" width="240">                 |
-| Dashboard     | ![Dashboard, desktop](docs/screenshots/dashboard-desktop.png)    | <img src="docs/screenshots/dashboard-mobile.png" alt="Dashboard, mobile" width="240">         |
-| Doctors       | ![Doctors, desktop](docs/screenshots/doctors-desktop.png)        | <img src="docs/screenshots/doctors-mobile.png" alt="Doctors, mobile" width="240">             |
+| Page          | Desktop                                                               | Mobile                                                                                        |
+| ------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Login         | ![Login, desktop](docs/screenshots/login-desktop.png)                 | <img src="docs/screenshots/login-mobile.png" alt="Login, mobile" width="240">                 |
+| Dashboard     | ![Dashboard, desktop](docs/screenshots/dashboard-desktop.png)         | <img src="docs/screenshots/dashboard-mobile.png" alt="Dashboard, mobile" width="240">         |
+| Doctors       | ![Doctors, desktop](docs/screenshots/doctors-desktop.png)             | <img src="docs/screenshots/doctors-mobile.png" alt="Doctors, mobile" width="240">             |
 | Doctor Detail | ![Doctor detail, desktop](docs/screenshots/doctor-detail-desktop.png) | <img src="docs/screenshots/doctor-detail-mobile.png" alt="Doctor detail, mobile" width="240"> |
-| Patients      | ![Patients, desktop](docs/screenshots/patients-desktop.png)      | <img src="docs/screenshots/patients-mobile.png" alt="Patients, mobile" width="240">           |
+| Patients      | ![Patients, desktop](docs/screenshots/patients-desktop.png)           | <img src="docs/screenshots/patients-mobile.png" alt="Patients, mobile" width="240">           |
 
 ## Scalability Considerations
 

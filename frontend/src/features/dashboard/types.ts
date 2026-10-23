@@ -18,3 +18,14 @@ export type DashboardStats = {
   monthlyChange: number; // percent, e.g. 4.8 or -2.1
   activePatients: number;
 };
+
+export type PatientsPerDoctor = {
+  doctorId: string;
+  name: string;
+  patients: number;
+};
+
+export type DoctorsBySpecialization = {
+  specialization: string;
+  doctors: number;
+};

@@ -7,6 +7,8 @@ import { DateRangePicker } from "@/components/shared/DateRangePicker";
 import { PageHeader } from "@/components/shared/page-header";
 import PatientsOverTimeCard from "@/features/dashboard/components/PatientsOverTimeCard";
 import StatsGrid from "@/features/dashboard/components/StatsGrid";
+import PatientsPerDoctorCard from "@/features/dashboard/components/PatientsPerDoctorCard";
+import DoctorsBySpecializationCard from "@/features/dashboard/components/DoctorsBySpecializationCard";
 
 const formatDay = (value: string) => format(parseISO(value), "MMM d, yyyy");
 
@@ -46,6 +48,11 @@ const DashboardPage = () => {
 
       {/* patient over time card  */}
       <PatientsOverTimeCard />
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        <PatientsPerDoctorCard />
+        <DoctorsBySpecializationCard />
+      </div>
     </div>
   );
 };

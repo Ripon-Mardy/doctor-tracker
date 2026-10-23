@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" font-family="Inter, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8F5F2"/>
+      <stop offset="1" stop-color="#BFE0D8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <circle cx="300" cy="340" r="215" fill="#FFFFFF" opacity="0.45"/>
+  <circle cx="300" cy="340" r="150" fill="#FFFFFF" opacity="0.35"/>
+
+  <!-- Decorative plus signs -->
+  <g fill="#14B8A6" opacity="0.35">
+    <rect x="506" y="80" width="8" height="28" rx="3"/>
+    <rect x="496" y="90" width="28" height="8" rx="3"/>
+    <rect x="76" y="232" width="6" height="22" rx="3"/>
+    <rect x="68" y="240" width="22" height="6" rx="3"/>
+    <rect x="530" y="352" width="6" height="22" rx="3"/>
+    <rect x="522" y="360" width="22" height="6" rx="3"/>
+  </g>
+
+  <!-- Doctor: coat -->
+  <path d="M150 800 L170 470 Q180 380 260 360 L340 360 Q420 380 430 470 L450 800 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <!-- Scrub top -->
+  <path d="M262 362 L300 440 L338 362 Z" fill="#14B8A6"/>
+  <!-- Lapels -->
+  <path d="M262 362 L248 475 L300 440 Z" fill="#F1F5F9"/>
+  <path d="M338 362 L352 475 L300 440 Z" fill="#F1F5F9"/>
+  <!-- Coat center line -->
+  <line x1="300" y1="440" x2="300" y2="800" stroke="#E2E8F0" stroke-width="2"/>
+  <!-- Pocket + pen -->
+  <rect x="360" y="505" width="6" height="32" rx="3" fill="#14B8A6"/>
+  <rect x="345" y="522" width="56" height="60" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Neck -->
+  <rect x="280" y="298" width="40" height="72" rx="12" fill="#C68B65"/>
+  <!-- Ears -->
+  <circle cx="238" cy="258" r="11" fill="#C68B65"/>
+  <circle cx="362" cy="258" r="11" fill="#C68B65"/>
+  <!-- Head -->
+  <circle cx="300" cy="250" r="62" fill="#D39B74"/>
+  <!-- Hair -->
+  <path d="M236 252 Q232 172 300 170 Q370 170 364 254 Q358 208 300 204 Q248 206 236 252 Z" fill="#1F2937"/>
+  <!-- Eyes -->
+  <circle cx="280" cy="256" r="4.5" fill="#1F2937"/>
+  <circle cx="320" cy="256" r="4.5" fill="#1F2937"/>
+  <!-- Cheeks -->
+  <circle cx="268" cy="276" r="8" fill="#E8A383" opacity="0.6"/>
+  <circle cx="332" cy="276" r="8" fill="#E8A383" opacity="0.6"/>
+  <!-- Smile -->
+  <path d="M282 282 Q300 298 318 282" stroke="#7C2D12" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Stethoscope -->
+  <path d="M268 380 Q244 462 280 500 Q300 516 320 500 Q356 462 332 380" stroke="#334155" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <line x1="300" y1="510" x2="300" y2="560" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="300" cy="576" r="15" fill="#334155"/>
+  <circle cx="300" cy="576" r="7" fill="#94A3B8"/>
+
+  <!-- Card 1: Total patients -->
+  <g transform="translate(36 86)" filter="url(#shadow)">
+    <rect width="192" height="96" rx="16" fill="#FFFFFF"/>
+    <text x="16" y="30" font-size="13" fill="#64748B">Total Patients</text>
+    <text x="16" y="66" font-size="27" font-weight="700" fill="#0F172A">1,248</text>
+    <rect x="122" y="48" width="54" height="22" rx="11" fill="#DCFCE7"/>
+    <text x="149" y="63" font-size="12" font-weight="600" fill="#15803D" text-anchor="middle">+12%</text>
+  </g>
+
+  <!-- Card 2: Weekly bar chart -->
+  <g transform="translate(380 176)" filter="url(#shadow)">
+    <rect width="184" height="114" rx="16" fill="#FFFFFF"/>
+    <text x="16" y="28" font-size="13" fill="#64748B">Patients / week</text>
+    <g fill="#99E2D6">
+      <rect x="18" y="68" width="16" height="30" rx="4"/>
+      <rect x="44" y="53" width="16" height="45" rx="4"/>
+      <rect x="70" y="73" width="16" height="25" rx="4"/>
+      <rect x="96" y="43" width="16" height="55" rx="4"/>
+      <rect x="122" y="58" width="16" height="40" rx="4"/>
+    </g>
+    <rect x="148" y="38" width="16" height="60" rx="4" fill="#0F766E"/>
+  </g>
+
+  <!-- Card 3: Doctors -->
+  <g transform="translate(36 330)" filter="url(#shadow)">
+    <rect width="172" height="80" rx="16" fill="#FFFFFF"/>
+    <circle cx="38" cy="40" r="21" fill="#FEE2E2"/>
+    <polyline points="23,40 30,40 34,31 40,49 44,40 53,40" stroke="#EF4444" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="70" y="34" font-size="12" fill="#64748B">Doctors</text>
+    <text x="70" y="58" font-size="19" font-weight="700" fill="#0F172A">40 Active</text>
+  </g>
+</svg>

@@ -3,7 +3,8 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-import { useAuth } from "../../context/auth-context";
+import { useAuth } from "@/context/auth-context";
+import Loader from "@/components/loader/Loader";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -15,16 +16,12 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
 
   useEffect(() => {
     if (!loading && !admin) {
-      router.replace("/");
+      router.replace("/login");
     }
   }, [admin, loading, router]);
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p>Loading...</p>
-      </div>
-    );
+    return <Loader />;
   }
 
   if (!admin) {

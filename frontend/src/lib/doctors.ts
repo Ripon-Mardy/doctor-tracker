@@ -44,6 +44,15 @@ export const fetchDoctors = (
   return apiRequest<DoctorListResponse>(`/doctors?${params.toString()}`);
 };
 
+// fetch single doctor function
+export const fetchDoctor = async (id: string): Promise<Doctor> => {
+  const response = await apiRequest<DoctorResponse>(
+    `/doctors/${encodeURIComponent(id)}`,
+  );
+
+  return response.doctor;
+};
+
 // create doctor function
 export const createDoctor = async (
   values: DoctorFormValues,
